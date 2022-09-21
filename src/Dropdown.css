@@ -1,17 +1,95 @@
-.Dropdown select:hover {
+.Bar {
+  border: 1px solid black;
+  width: 10rem;
+  height: 1.15rem;
+  display: flex;
+}
+
+.Bar:hover {
   cursor: pointer;
 }
 
-.Dropdown select {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>')
-    no-repeat right;
-  -webkit-appearance: none;
-  padding-right: 1.5rem;
-  background-position: right 0.1rem center;
+.ArrowDown {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  margin-top: 7.5px;
+  left: 150px;
+  position: absolute;
 }
 
-.Dropdown select:focus {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>')
-    no-repeat right;
-  background-position: right 0.1rem center;
+.ArrowUp {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+  margin-top: 7.5px;
+  left: 150px;
+  position: absolute;
+}
+
+.ShowClearButton {
+  visibility: visible;
+}
+
+.HideClearButton {
+  visibility: hidden;
+}
+
+.ClearButton {
+  position: absolute;
+  left: 175px;
+  top: 80px;
+}
+
+.ClearButton:hover {
+  cursor: pointer;
+}
+
+.ShowOptions {
+  visibility: visible;
+}
+
+.HideOptions {
+  visibility: hidden;
+}
+
+.OuterTriangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 7px solid black;
+  margin-top: 3px;
+  left: 20px;
+  position: absolute;
+}
+
+.InnerTriangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 7px solid white;
+  margin-top: 3.5px;
+  left: 20px;
+  position: absolute;
+}
+
+.Options {
+  position: absolute;
+  border: 1px solid black;
+  background-color: white;
+  width: 10rem;
+  height: 4.5rem;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.Choice:hover {
+  background-color: cornflowerblue;
+  cursor: pointer;
 }

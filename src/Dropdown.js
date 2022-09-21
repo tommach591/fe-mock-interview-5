@@ -2,36 +2,42 @@ import "./Dropdown.css";
 import { useState } from "react";
 
 function Dropdown({ list }) {
-  const [focused, setFocus] = useState(false);
+  const [active, setActive] = useState(false);
+  const [selected, setSelected] = useState("");
+
+  function toggleActive() {
+    setActive(!active);
+  }
+
+  function selectedAnOption(choice) {
+    setSelected(choice);
+    toggleActive();
+  }
+
   return (
     <div className="Dropdown">
-      <select
-        name="item"
-        id="item"
-        defaultValue="none"
-        onChange={() => {
-          var e = document.getElementById("item");
-          e.blur();
-        }}
-        onClick={() => {
-          var e = document.getElementById("item");
-          if (focused) {
-            e.blur();
-          } else e.focus();
-          setFocus(!focused);
-        }}
-      >
-        <option value="none" disabled hidden>
-          Please select an item
-        </option>
-        {list.map((e) => {
-          return (
-            <option key={e} value={e}>
-              {e}
-            </option>
-          );
-        })}
-      </select>
+      <div className="Bar" onClick={toggleActive}>
+        {selected === "" ? "Please select an item" : selected}
+        <div className={active ? "ArrowUp" : "ArrowDown"}></div>
+      </div>
+      <div className={active ? "ShowOptions" : "HideOptions"}>
+        <div className="OuterTriangle"></div>
+        <div className="Options">
+          {list.map((e) => {
+            return (
+              <div className="Choice" onClick={() => selectedAnOption(e)}>
+                {e}
+              </div>
+            );
+          })}
+        </div>
+        <div className="InnerTriangle"></div>
+      </div>
+      <div className={selected === "" ? "HideClearButton" : "ShowClearButton"}>
+        <div className="ClearButton" onClick={() => setSelected("")}>
+          x
+        </div>
+      </div>
     </div>
   );
 }

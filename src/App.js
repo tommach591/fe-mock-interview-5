@@ -1,8 +1,17 @@
 import Dropdown from "./Dropdown";
 import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [list] = useState(["Apples", "Oranges", "Peaches", "Pears"]);
+  const [list] = useState([
+    "Apples",
+    "Oranges",
+    "Peaches",
+    "Pears",
+    "Cherries",
+    "Melons",
+    "Bananas",
+  ]);
 
   return (
     <div>
